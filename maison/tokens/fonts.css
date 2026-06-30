@@ -1,0 +1,36 @@
+/* ============================================================
+   FONTS — FootballCRM / SportScore CRM  (Emerald redesign)
+   Editorial display: Instrument Serif — elegant, modern serif
+     used for headlines, hero statements and section titles.
+   UI / body: Hanken Grotesk.
+   Numerals / scores: Geist Mono — tabular, technical, broadcast.
+   Icons: Material Symbols Rounded (softer, more premium than
+     Outlined; the .material-symbols-outlined class is mapped to
+     it so existing components keep working).
+   Loaded from Google Fonts CDN.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+/* Material Symbols base + fill helper (mirrors the app).
+   Class name kept as .material-symbols-outlined for back-compat,
+   but it renders the Rounded set. */
+.material-symbols-outlined,
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.filled,
+.material-symbols-rounded.filled { font-variation-settings: 'FILL' 1; }

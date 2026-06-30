@@ -1,0 +1,42 @@
+/* ============================================================
+   SPACING, RADII & SIZING — FootballCRM / SportScore CRM
+   VOLT redesign: denser than the old Material spacing, and a
+   tighter "slight-corner" radius scale (no big pill cards). Pills
+   are reserved for live badges / status dots only.
+   ============================================================ */
+
+:root {
+  /* Base spacing scale */
+  --space-unit: 4px;    /* atomic unit */
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    10px;   /* gutter (tighter) */
+  --space-4:    14px;
+  --space-5:    18px;
+  --space-6:    22px;
+  --space-8:    30px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+
+  /* Semantic spacing (denser) */
+  --gutter:     10px;   /* grid gutter between cards */
+  --page-pad:   20px;   /* main content padding */
+  --card-pad:   16px;   /* default card interior padding */
+  --row-pad:    11px;   /* dense list-row vertical padding */
+
+  /* ---- Radii — premium "soft corner" scale ----------------- */
+  --radius-xs:   6px;    /* tags, mini chips */
+  --radius-sm:   8px;    /* chips / inputs */
+  --radius-md:   11px;   /* buttons, fields, tiles */
+  --radius-lg:   14px;   /* standard cards */
+  --radius-xl:   16px;   /* feature cards */
+  --radius-2xl:  20px;   /* hero panels */
+  --radius-pill: 9999px; /* live badges, status dots, avatars only */
+
+  /* ---- Layout ---------------------------------------------- */
+  --max-content: 1440px; /* main container max width */
+  --topnav-h:    64px;   /* sticky top nav height */
+  --row-h:       46px;   /* dense data-row height */
+  --hit-min:     44px;   /* minimum touch target */
+}

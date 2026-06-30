@@ -1,0 +1,202 @@
+/* ============================================================
+   COLORS — FootballCRM / SportScore CRM  ·  EMERALD (dark-first)
+   A premium broadcast palette: subtly green-tinted near-black
+   surfaces, ONE electric EMERALD accent, red live/danger, and
+   gold reserved for currency & scoreboard numerals. Dark is the
+   default; a light mode is provided under :root[data-theme="light"].
+
+   Layers:
+     1. Brand ramps   — emerald, support mint, gold, red, amber
+     2. Neutral ramp  — green-tinted "ink" surfaces & "fog" text
+     3. Semantic      — text / surface / outline / state aliases
+   ============================================================ */
+
+:root {
+  /* ---- 1. BRAND ------------------------------------------------ */
+
+  /* Emerald — the single electric accent (primary, links, active) */
+  --em-300: #7df0bd;   /* soft text on dark */
+  --em-400: #5fe6aa;   /* hover / bright */
+  --em-500: #3ddc97;   /* ACCENT / PRIMARY */
+  --em-600: #16b783;   /* deeper fill (used in light mode) */
+  --em-700: #0a7d57;   /* emerald-on-light AA text */
+  --em-ink: #04140c;   /* near-black ink for text ON emerald */
+
+  /* Support Mint — "safe" survival zone / positive deltas */
+  --green-500: #4fe3a6;
+  --green-400: #79edbf;
+  --green-700: #0a7d57;  /* green-on-light text */
+  --green-200: #103326;  /* dark green chip fill */
+
+  /* Trophy Gold — currency, scoreboard numerals, jackpot */
+  --gold-300: #ffe6a3;
+  --gold-500: #ffd768;   /* primary gold */
+  --gold-700: #9a7212;   /* gold-on-light AA text */
+
+  /* Live Red — live / error / danger / "danger zone" / PvP */
+  --red-400: #ff8585;
+  --red-500: #ff5d5d;    /* LIVE / ERROR */
+  --red-700: #c8302f;    /* red-on-light text */
+
+  /* Amber — jackpot rollover banner */
+  --amber-500: #ffb02e;
+  --amber-600: #e8941a;
+
+  /* ---- 2. NEUTRALS — green-tinted "ink" + "fog" ------------- */
+  --ink-950:  #050706;
+  --ink-900:  #080b0a;   /* page background */
+  --ink-850:  #0a0e0c;
+  --ink-800:  #101513;   /* card / panel surface */
+  --ink-750:  #161c19;   /* hover / raised surface */
+  --ink-700:  #0d1210;   /* sunken / muted tiles */
+  --ink-650:  #1b211d;   /* slate chip fill */
+  --ink-600:  #222823;
+  --line-1:   #1e2421;   /* subtle border / hairline */
+  --line-2:   #2b322e;   /* strong border / field border */
+
+  --fog-100:  #eef3f0;   /* strong text */
+  --fog-300:  #b7c0ba;   /* body text */
+  --fog-500:  #8b938e;   /* muted text */
+  --fog-600:  #6c7670;
+
+  /* ---- 3. SEMANTIC ALIASES ---------------------------------- */
+
+  /* Primary (emerald) */
+  --color-primary:            var(--em-500);
+  --color-primary-bright:     var(--em-400);
+  --color-primary-hover:      var(--em-400);
+  --color-on-primary:         var(--em-ink);
+  --color-primary-tint:       rgba(61, 220, 151, 0.13);  /* emerald chip fill */
+  --color-on-primary-tint:    var(--em-300);
+
+  /* Secondary / success (mint) */
+  --color-secondary:          var(--green-500);
+  --color-on-secondary:       #04140a;
+  --color-secondary-tint:     rgba(79, 227, 166, 0.14);
+  --color-on-secondary-tint:  var(--green-400);
+  --color-success:            var(--green-500);
+
+  /* Accent gold */
+  --color-accent-gold:        var(--gold-500);
+  --color-accent-gold-text:   var(--gold-500);
+  --color-gold-tint:          rgba(255, 215, 104, 0.14);
+
+  /* Danger / live */
+  --color-danger:             var(--red-500);
+  --color-on-danger:          #ffffff;
+  --color-danger-tint:        rgba(255, 93, 93, 0.13);
+  --color-on-danger-tint:     var(--red-400);
+  --color-live:               var(--red-500);
+  --color-on-live:            #ffffff;
+
+  /* Text */
+  --text-strong:      var(--fog-100);
+  --text-body:        var(--fog-300);
+  --text-muted:       var(--fog-500);
+  --text-faint:       var(--fog-600);
+  --text-on-dark:     #ffffff;
+  --text-on-dark-dim: rgba(255, 255, 255, 0.66);
+  --text-on-accent:   var(--em-ink);
+
+  /* Surfaces */
+  --surface-page:     var(--ink-900);
+  --surface-card:     var(--ink-800);
+  --surface-raised:   var(--ink-750);
+  --surface-sunken:   var(--ink-700);
+  --surface-muted:    var(--ink-700);
+  --surface-hover:    var(--ink-750);
+  --surface-dark:     var(--ink-950);
+
+  /* Lines */
+  --border-subtle:    var(--line-1);
+  --border-strong:    var(--line-2);
+  --outline-ring:     rgba(61, 220, 151, 0.34);
+
+  /* Field / focus */
+  --field-bg:         var(--ink-700);
+  --field-border:     var(--line-2);
+  --field-focus:      var(--em-500);
+  --field-focus-ring: rgba(61, 220, 151, 0.20);
+  --field-placeholder: var(--fog-600);
+
+  /* State surfaces (highlight rows / cells) */
+  --state-me-bg:      rgba(61, 220, 151, 0.09);
+  --state-next-bg:    rgba(61, 220, 151, 0.07);
+  --state-danger-bg:  rgba(255, 93, 93, 0.07);
+
+  /* ---- Legacy aliases kept for components that reference them - */
+  --neutral-0:   var(--ink-800);
+  --neutral-50:  var(--ink-900);
+  --neutral-400: var(--line-2);
+  --neutral-600: var(--fog-500);
+  --tertiary-fixed:    var(--ink-650);
+  --on-tertiary-fixed: var(--fog-300);
+  --tertiary:          var(--fog-500);
+  --blue-500:    var(--em-500);   /* historical "primary" name */
+}
+
+/* ============================================================
+   LIGHT MODE — opt-in via <html data-theme="light"> (or any
+   ancestor). Same Emerald accent; surfaces flip to a cool
+   near-white, accent text uses the darker em-700 for contrast.
+   ============================================================ */
+:root[data-theme="light"] {
+  --color-primary:            var(--em-600);
+  --color-primary-bright:     var(--em-500);
+  --color-primary-hover:      var(--em-700);
+  --color-on-primary:         #ffffff;
+  --color-primary-tint:       rgba(22, 183, 131, 0.14);
+  --color-on-primary-tint:    var(--em-700);
+
+  --color-secondary:          var(--em-700);
+  --color-on-secondary:       #ffffff;
+  --color-secondary-tint:     rgba(10, 125, 87, 0.13);
+  --color-on-secondary-tint:  var(--em-700);
+  --color-success:            var(--em-700);
+
+  --color-accent-gold-text:   var(--gold-700);
+  --color-gold-tint:          rgba(154, 114, 18, 0.13);
+
+  --color-danger:             var(--red-700);
+  --color-danger-tint:        rgba(200, 48, 47, 0.10);
+  --color-on-danger-tint:     var(--red-700);
+  --color-live:               var(--red-500);
+
+  --text-strong:      #0f1714;
+  --text-body:        #3a443f;
+  --text-muted:       #69736d;
+  --text-faint:       #98a09a;
+  --text-on-dark:     #ffffff;
+  --text-on-dark-dim: rgba(255, 255, 255, 0.7);
+  --text-on-accent:   #ffffff;
+
+  --surface-page:     #f2f5f2;
+  --surface-card:     #ffffff;
+  --surface-raised:   #ffffff;
+  --surface-sunken:   #eef2ee;
+  --surface-muted:    #e8ede9;
+  --surface-hover:    #f4f7f4;
+  --surface-dark:     #0d1210;
+
+  --border-subtle:    #e2e8e3;
+  --border-strong:    #cdd5ce;
+  --outline-ring:     rgba(22, 183, 131, 0.40);
+
+  --field-bg:         #ffffff;
+  --field-border:     #d4dbd5;
+  --field-focus:      var(--em-600);
+  --field-focus-ring: rgba(22, 183, 131, 0.22);
+  --field-placeholder: #99a19b;
+
+  --state-me-bg:      rgba(22, 183, 131, 0.12);
+  --state-next-bg:    rgba(22, 183, 131, 0.08);
+  --state-danger-bg:  rgba(200, 48, 47, 0.07);
+
+  --green-200:        #d4f5e5;
+  --tertiary-fixed:   #edf2ee;
+  --on-tertiary-fixed:#26302b;
+  --neutral-0:        #ffffff;
+  --neutral-50:       #f2f5f2;
+  --neutral-400:      #d4dbd5;
+  --neutral-600:      #69736d;
+}

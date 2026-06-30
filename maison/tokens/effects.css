@@ -1,0 +1,95 @@
+/* ============================================================
+   EFFECTS — FootballCRM / SportScore CRM  ·  VOLT redesign
+   Dark-first. Elevation comes from hairline borders + tight,
+   dark shadows — NOT soft floaty slate shadows or colored glows.
+   Page background is flat near-black with a faint top vignette
+   (no radial brand glows, no pitch-grid wash). Texture is
+   reserved for hero panels (halftone dots / turf stripes).
+   ============================================================ */
+
+:root {
+  /* ---- Shadows (tight, dark, low-spread) -------------------- */
+  --shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-sm:   0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.50);
+  --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-hero: 0 14px 40px rgba(0, 0, 0, 0.60);
+  --shadow-pop:  0 10px 28px rgba(0, 0, 0, 0.55);
+
+  /* accent glow — used sparingly on the primary CTA / live badge */
+  --glow-volt:   0 0 0 1px rgba(61, 220, 151, 0.22), 0 8px 22px rgba(61, 220, 151, 0.20);
+  --glow-live:   0 0 0 1px rgba(255, 93, 93, 0.28), 0 4px 14px rgba(255, 93, 93, 0.26);
+
+  /* hairline top highlight on raised dark surfaces */
+  --shadow-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* ---- Blur (reserved for sticky chrome only) -------------- */
+  --blur-glass:  16px;
+  --blur-chip:   8px;
+  --blur-strong: 20px;
+
+  /* ---- Gradients ------------------------------------------- */
+  /* Hero: deep ink with a single emerald edge-light */
+  --grad-hero: radial-gradient(120% 130% at 82% 0%, rgba(61,220,151,0.12), transparent 46%), linear-gradient(160deg, #0c1611 0%, #0a0f0d 52%, #080b0a 100%); /* @kind color */
+  /* Match Center hero (deeper) */
+  --grad-match-hero: radial-gradient(120% 120% at 80% -10%, rgba(61,220,151,0.14), transparent 48%), linear-gradient(155deg, #0d1813 0%, #0a0f0d 55%, #080b0a 100%); /* @kind color */
+  /* Scoreboard / feature accent bar (emerald → gold) */
+  --grad-accent-bar: linear-gradient(90deg, #16b783 0%, #3ddc97 50%, #ffd768 100%); /* @kind color */
+  /* Emerald CTA fill */
+  --grad-volt: linear-gradient(180deg, #5fe6aa, #3ddc97); /* @kind color */
+  /* Jackpot banner */
+  --grad-jackpot: linear-gradient(90deg, #ffb02e, #ffd768); /* @kind color */
+  /* Frosted top nav (dark glass) */
+  --grad-glass-nav: linear-gradient(180deg, rgba(16,21,19,0.86), rgba(8,11,10,0.78)); /* @kind color */
+
+  /* Page background — flat near-black + faint top vignette (NO glows) */
+  --bg-page-wash:
+    radial-gradient(140% 80% at 50% -20%, rgba(61,220,151,0.05), transparent 60%),
+    linear-gradient(180deg, #0a0f0d 0%, #080b0a 100%) /* @kind color */;
+
+  /* Hero textures (use ON hero panels, not the whole page) */
+  /* Halftone dot field */
+  --tex-halftone: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.4px) /* @kind color */;
+  --tex-halftone-size: 9px 9px; /* @kind spacing */
+  /* Broadcast vertical scanlines / turf stripes */
+  --tex-turf: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 46px) /* @kind color */;
+
+  /* ---- Motion --------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   160ms; /* @kind other */
+  --dur-slow:   280ms; /* @kind other */
+  --dur-bar:    600ms; /* @kind other */
+
+  /* Lift transform on hover (subtle) */
+  --hover-lift:    translateY(-1px); /* @kind other */
+  --hover-lift-lg: translateY(-2px); /* @kind other */
+}
+
+/* Light mode: warmer, lighter elevation (still tight, not floaty) */
+:root[data-theme="light"] {
+  --shadow-xs:   0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm:   0 2px 8px rgba(15, 23, 42, 0.07);
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.09);
+  --shadow-lift: 0 10px 28px rgba(15, 23, 42, 0.12);
+  --shadow-hero: 0 16px 44px rgba(15, 23, 42, 0.16);
+  --shadow-pop:  0 12px 30px rgba(15, 23, 42, 0.14);
+  --shadow-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  --grad-hero: radial-gradient(120% 130% at 82% 0%, rgba(22,183,131,0.14), transparent 46%), linear-gradient(160deg, #122019 0%, #0e1813 55%, #0c1410 100%); /* @kind color */
+  --grad-glass-nav: linear-gradient(180deg, rgba(255,255,255,0.90), rgba(242,245,242,0.80)); /* @kind color */
+  --bg-page-wash: linear-gradient(180deg, #f4f7f4 0%, #f2f5f2 100%) /* @kind color */;
+  --tex-halftone: radial-gradient(rgba(15,23,20,0.06) 1px, transparent 1.4px) /* @kind color */;
+  --tex-turf: repeating-linear-gradient(90deg, rgba(15,23,20,0.04) 0 2px, transparent 2px 46px) /* @kind color */;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms; /* @kind other */
+    --dur-base: 0ms; /* @kind other */
+    --dur-slow: 0ms; /* @kind other */
+    --dur-bar: 0ms; /* @kind other */
+    --hover-lift: none; /* @kind other */
+    --hover-lift-lg: none; /* @kind other */
+  }
+}
